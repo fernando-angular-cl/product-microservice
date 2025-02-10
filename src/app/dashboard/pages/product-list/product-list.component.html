@@ -1,1 +1,16 @@
-<p>product-list works!</p>
+<app-title title="Listado de Productos"></app-title>
+
+@if (productService.loading()) {
+  <div>
+    Cargando productos...
+  </div>
+} @else {
+  <ul>
+    @for (product of productService.products(); track product.id) {
+      <li>
+        {{ product.productName }} - {{ product.unitPrice | currency }}
+      </li>
+    }
+  </ul>
+}
+
