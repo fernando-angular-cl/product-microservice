@@ -23,4 +23,10 @@ export default class ProductListComponent {
     //this.productsService.products();
   }
 
+  deleteProduct(productId: string) {
+    if (confirm('¿Estás seguro de que quieres eliminar este producto?')) {
+     // this.productService.deleteProduct(productId);
+    }
+  }
+
 }
